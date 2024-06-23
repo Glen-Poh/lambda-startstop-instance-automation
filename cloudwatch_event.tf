@@ -58,22 +58,5 @@ resource "aws_cloudwatch_event_target" "start_instances_lambda" {
 }
 
 
-/*
-resource "aws_scheduler_schedule" "stop_ec2" { # to try again need change role assuem role and lambda name
-  name       = "stop_ec2"
-  group_name = "default"
 
-  flexible_time_window {
-    mode = "OFF"
-  }
-
-  schedule_expression          = "cron(0 10 * * ? *)"
-  schedule_expression_timezone = "Asia/Singapore"
-
-  target {
-    arn      = aws_lambda_function.lambda_startstop_ec2.arn
-    role_arn = aws_iam_role.scheduler_role.arn
-  }
-}
-*/
 
